@@ -67,20 +67,22 @@ public class BinarySearchTree {
         Node compareNode = root;
 
         while (true) {
-            if (node.getValue() <= compareNode.getValue()) {
+            if (node.getValue() < compareNode.getValue()) {
                 if (compareNode.getLeftNode() == null) {
                     compareNode.setLeft(node);
                     return;
                 } else {
                     compareNode = compareNode.getLeftNode();
                 }
-            } else {
+            } else if (node.getValue() < compareNode.getValue()) {
                 if (compareNode.getRightNode() == null) {
                     compareNode.setRight(node);
                     return;
                 } else {
                     compareNode = compareNode.getRightNode();
                 }
+            } else if (node.getValue() == compareNode.getValue()) {
+                throw new IllegalArgumentException("Node already exists in the binary search tree.");
             }
         }
     }
@@ -89,7 +91,7 @@ public class BinarySearchTree {
         // TODO return true if the element has been found, false if its not in the tree.
         return false;
     }
-    
+
 
     public void remove(Integer toRemove) {
         // TODO removes an element. Throws an error if its not on the tree.
