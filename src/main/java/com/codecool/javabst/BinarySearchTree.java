@@ -60,7 +60,6 @@ public class BinarySearchTree {
         }
     }
 
-
     // Function which inserts a node into the proper position
     public void insertNode(Node node) {
         // TODO adds an element. Throws an error if it exist.
@@ -74,7 +73,7 @@ public class BinarySearchTree {
                 } else {
                     compareNode = compareNode.getLeftNode();
                 }
-            } else if (node.getValue() < compareNode.getValue()) {
+            } else if (node.getValue() > compareNode.getValue()) {
                 if (compareNode.getRightNode() == null) {
                     compareNode.setRight(node);
                     return;
@@ -89,6 +88,17 @@ public class BinarySearchTree {
 
     public boolean search(Integer toFind) {
         // TODO return true if the element has been found, false if its not in the tree.
+        Node compareNode = root;
+        while (compareNode != null) {
+            if (compareNode.getValue() == toFind) {
+                return true;
+            }
+            if (toFind < compareNode.getValue()) {
+                compareNode = compareNode.getLeftNode();
+            } else if ((toFind > compareNode.getValue())) {
+                compareNode = compareNode.getRightNode();
+            }
+        }
         return false;
     }
 
@@ -97,7 +107,4 @@ public class BinarySearchTree {
         // TODO removes an element. Throws an error if its not on the tree.
     }
 
-    public Node getRoot() {
-        return root;
-    }
 }

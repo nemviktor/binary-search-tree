@@ -9,8 +9,9 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         BinarySearchTree myTree = createBinarySearchTree();
+        System.out.println(myTree.search(34535));
 
-//        // write some test code here
+        // write some test code here
 //        System.out.println(myTree.search(7)); // should be true
 //        System.out.println(myTree.search(55)); // should be true
 //        System.out.println(myTree.search(34535)); // should be false
