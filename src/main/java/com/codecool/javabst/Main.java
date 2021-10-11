@@ -23,11 +23,6 @@ public class Main {
             numbers.add(i * 2 + 5);
         }
         BinarySearchTree myTree = new BinarySearchTree(numbers);
-        System.out.println(numbers.toString());
-        System.out.println(myTree.getRoot().getValue());
-        System.out.println(myTree.getRoot().getLeftNode().getValue());
-//        System.out.println(myTree.getRoot().getLeftNode().getLeftNode().getValue());
-        System.out.println(myTree.getRoot().getLeftNode().getRightNode().getValue());
         return myTree;
     }
 
